@@ -2,8 +2,9 @@
 
 This repository holds one table, `examples.csv.gz`. It names 24,132 examples of 300 seconds from
 the HAI security dataset, each seen through one control loop of a power plant testbed and
-labelled `attack` or `normal`. The TimeNet connector `icsdataset/hai-loop-attacks` downloads it,
-pinned by commit and SHA-256, and builds the series from the HAI data files.
+labelled `attack` or `normal`. A TimeNet connector, `icsdataset/hai-loop-attacks`, is proposed in
+a pull request to [OpenTSLM/TimeNet](https://github.com/OpenTSLM/TimeNet). It downloads this
+table, pinned by commit and SHA-256, and builds the series from the HAI data files.
 
 The table holds no series values. It says which HAI file, which window, which loop and which of
 its series, the label, the split, the attack interval and a short rule-written text.
@@ -80,5 +81,7 @@ shasum -a 256 -c SHA256SUMS
 - The texts come from simple rules and were read against charts for a few dozen examples only.
 - `reacting` is a mark, not a label. Whether a marked loop was pushed by the attack or moved by
   chance is not settled.
-- The pipeline that writes this table is not public yet. The table is byte-for-byte reproducible
-  from it: every draw uses a fixed seed and the gzip header carries no time stamp.
+- The pipeline that writes this table is
+  [vid-t/hai-attack-reader](https://github.com/vid-t/hai-attack-reader): `uv run hai-build`, then
+  `uv run hai-export`. The table is byte-for-byte reproducible from it: every draw uses a fixed
+  seed and the gzip header carries no time stamp.
