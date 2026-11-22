@@ -81,7 +81,7 @@ shasum -a 256 -c SHA256SUMS
 - The texts come from simple rules and were read against charts for a few dozen examples only.
 - `reacting` is a mark, not a label. Whether a marked loop was pushed by the attack or moved by
   chance is not settled.
-- The pipeline that writes this table is
-  [vid-t/hai-attack-reader](https://github.com/vid-t/hai-attack-reader): `uv run hai-build`, then
+- The pipeline that writes this table is Night Shift,
+  [vid-t/night-shift](https://github.com/vid-t/night-shift): `uv run hai-build`, then
   `uv run hai-export`. The table is byte-for-byte reproducible from it: every draw uses a fixed
   seed and the gzip header carries no time stamp.
