@@ -1,5 +1,11 @@
 # HAI loop attacks: the examples table
 
+> **This repository is archived.** The table has moved to Hugging Face:
+> [night-shift-data/hai-loop-attacks](https://huggingface.co/datasets/night-shift-data/hai-loop-attacks).
+> The new version takes the flagged seconds of 20.07 and 21.03 from each loop's own process flag
+> and lists every flagged run. The TimeNet connector reads it from there. This copy is the first
+> version and stays here, unchanged, for the first commit of the TimeNet pull request.
+
 This repository holds one table, `examples.csv.gz`. It names 24,132 examples of 300 seconds from
 the HAI security dataset, each seen through one control loop of a power plant testbed and
 labelled `attack` or `normal`. A TimeNet connector, `icsdataset/hai-loop-attacks`, is proposed in
